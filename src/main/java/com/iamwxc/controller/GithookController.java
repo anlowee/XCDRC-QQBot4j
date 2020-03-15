@@ -36,17 +36,21 @@ public class GithookController {
 
     @PostMapping("/githook")
     public void doPOST(@RequestBody String jsonString) {
-        GitPushIssue gitPushIssue = JSONObject.parseObject(jsonString, GitPushIssue.class);
-        String msg = "A new push issue from this guy→";
-        msg += gitPushIssue.getSender().getLogin() + "\n";
-        int size = gitPushIssue.getCommits().size();
-        msg += "totally [" + size + "] commits.\n";
-        for (GitCommit commit : gitPushIssue.getCommits()) {
-            msg += "🔨🔨🔨🔨🔨🔨🔨🔨🔨🔨\n";
-            msg += "Message: " + commit.getMessage() + "\n";
-            msg += "Details here: " + commit.getUrl();
+        try {
+            GitPushIssue gitPushIssue = JSONObject.parseObject(jsonString, GitPushIssue.class);
+            String msg = "A new push issue from this guy→";
+            msg += gitPushIssue.getSender().getLogin() + "\n";
+            int size = gitPushIssue.getCommits().size();
+            msg += "totally [" + size + "] commits.\n";
+            for (GitCommit commit : gitPushIssue.getCommits()) {
+                msg += "🔨🔨🔨🔨🔨🔨🔨🔨🔨🔨\n";
+                msg += "Message: " + commit.getMessage() + "\n";
+                msg += "Details here: " + commit.getUrl();
+            }
+            sender.SENDER.sendGroupMsg("598876538", msg);
+        } catch (NullPointerException e) {
+            System.out.println(jsonString);
         }
-        sender.SENDER.sendGroupMsg("598876538", msg);
     }
 
 }
