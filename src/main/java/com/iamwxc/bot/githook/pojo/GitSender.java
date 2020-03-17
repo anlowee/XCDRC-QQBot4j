@@ -1,4 +1,4 @@
-package com.iamwxc.pojo;
+package com.iamwxc.bot.githook.pojo;
 
 import lombok.Data;
 

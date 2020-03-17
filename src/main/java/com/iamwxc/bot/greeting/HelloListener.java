@@ -1,4 +1,4 @@
-package com.iamwxc.bot.listener;
+package com.iamwxc.bot.greeting;
 
 import com.forte.qqrobot.anno.Filter;
 import com.forte.qqrobot.anno.Listen;

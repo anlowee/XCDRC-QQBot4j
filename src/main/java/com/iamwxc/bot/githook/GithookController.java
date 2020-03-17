@@ -1,13 +1,11 @@
-package com.iamwxc.controller;
+package com.iamwxc.bot.githook;
 
 import com.alibaba.fastjson.JSONObject;
-import com.forte.component.forcoolqhttpapi.beans.msg.Msg;
 import com.forte.qqrobot.anno.depend.Beans;
 import com.forte.qqrobot.sender.MsgSender;
-import com.iamwxc.pojo.GitCommit;
-import com.iamwxc.pojo.GitPushIssue;
+import com.iamwxc.bot.githook.pojo.GitCommit;
+import com.iamwxc.bot.githook.pojo.GitPushIssue;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
