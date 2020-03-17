@@ -11,7 +11,6 @@ import com.forte.qqrobot.listener.ListenContext;
 import com.forte.qqrobot.sender.MsgSender;
 import com.iamwxc.bot.seller.Good;
 import com.iamwxc.bot.seller.GoodDAO;
-import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,11 +23,15 @@ import org.springframework.stereotype.Service;
  * @author CC
  * @version 1.0
  */
-@Service
+@Beans
+//@Service
 public class ManageGoodListener {
 
-    @Autowired
+//    @Autowired
+    @Depend
     private GoodDAO goodDAO;
+
+
 
     @Listen(MsgGetTypes.privateMsg)
     @Filter(value = "链接：https://pan.baidu.com/", code = "1290959722", keywordMatchType = KeywordMatchType.STARTS_WITH)
@@ -46,7 +49,7 @@ public class ManageGoodListener {
             Good good = new Good();
             good.setBaiduYunInfo(bdyurl);
             good.setName(name);
-            goodDAO.save(good);
+            goodDAO.save(good); // ????
             context.clear();
             sender.SENDER.sendPrivateMsg(msg.getQQ(), "新增成功，文件名：" + name);
         } else

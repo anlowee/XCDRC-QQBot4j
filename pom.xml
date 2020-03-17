@@ -19,17 +19,11 @@
     </properties>
 
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/io.github.ForteScarlet/simple-robot-core -->
-        <dependency>
-            <groupId>io.github.ForteScarlet</groupId>
-            <artifactId>simple-robot-core</artifactId>
-            <version>1.8.1</version>
-        </dependency>
         <!-- https://mvnrepository.com/artifact/io.github.ForteScarlet.simple-robot-core/component-forcoolqhttpapi -->
         <dependency>
             <groupId>io.github.ForteScarlet.simple-robot-core</groupId>
             <artifactId>component-forcoolqhttpapi</artifactId>
-            <version>0.8.1-BETA-1.8.0</version>
+            <version>0.9.0-BETA-1.10</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
         <dependency>
@@ -55,12 +49,6 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <scope>runtime</scope>
-            <optional>true</optional>
-        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>

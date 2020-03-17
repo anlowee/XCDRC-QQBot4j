@@ -1,10 +1,12 @@
 package com.iamwxc.config;
 
 import com.forte.component.forcoolqhttpapi.CoolQHttpApplication;
+import com.forte.qqrobot.depend.DependCenter;
 import com.forte.qqrobot.depend.DependGetter;
 import com.forte.qqrobot.sender.MsgSender;
 import com.iamwxc.QQRunApplication;
 import com.iamwxc.bot.seller.GoodDAO;
+import com.iamwxc.bot.seller.admin.ManageGoodListener;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -19,7 +21,7 @@ import org.springframework.stereotype.Component;
  * @author ForteScarlet <[email]ForteScarlet@163.com>
  * @since JDK1.8
  **/
-@Component
+//@Component
 @Configuration
 public class QQConfig {
 
@@ -44,7 +46,9 @@ public class QQConfig {
             @Override
             public <T> T get(Class<T> clazz) {
                 try {
-                    return factory.getBean(clazz);
+                    T t = factory.getBean(clazz);
+                     System.out.println(clazz + ": " + t);
+                    return t;
                 }catch (Exception e){
                     return null;
                 }
@@ -53,7 +57,9 @@ public class QQConfig {
             @Override
             public <T> T get(String name, Class<T> type) {
                 try {
-                    return factory.getBean(name, type);
+                    T bean = factory.getBean(name, type);
+                    System.out.println(type + ": " + bean);
+                    return bean;
                 }catch (Exception e){
                     return null;
                 }
@@ -62,7 +68,9 @@ public class QQConfig {
             @Override
             public Object get(String name) {
                 try {
-                    return factory.getBean(name);
+                    Object bean = factory.getBean(name);
+                    System.out.println(name + ": " + bean);
+                    return bean;
                 }catch (Exception e){
                     return null;
                 }
@@ -81,6 +89,11 @@ public class QQConfig {
 
         // 启动
         httpApplication.run(new QQRunApplication(dependGetter));
+
+        DependCenter dependCenter = httpApplication.getDependCenter();
+
+        ManageGoodListener x = dependCenter.get(ManageGoodListener.class);
+        System.out.println(x);
 
         // 将启动器注入到Spring容器
         return httpApplication;
