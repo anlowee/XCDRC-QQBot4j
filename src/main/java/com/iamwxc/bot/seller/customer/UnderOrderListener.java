@@ -1,4 +1,4 @@
-package com.iamwxc.bot.seller;
+package com.iamwxc.bot.seller.customer;
 
 import com.forte.qqrobot.anno.Filter;
 import com.forte.qqrobot.anno.Listen;

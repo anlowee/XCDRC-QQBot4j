@@ -4,6 +4,7 @@ import com.forte.component.forcoolqhttpapi.CoolQHttpApplication;
 import com.forte.qqrobot.depend.DependGetter;
 import com.forte.qqrobot.sender.MsgSender;
 import com.iamwxc.QQRunApplication;
+import com.iamwxc.bot.seller.GoodDAO;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -92,8 +93,6 @@ public class QQConfig {
     public MsgSender msgSender(CoolQHttpApplication httpApplication){
         return httpApplication.getMsgSender();
     }
-
-
 
 }
 
