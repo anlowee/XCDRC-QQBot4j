@@ -24,11 +24,10 @@ import org.springframework.stereotype.Service;
  * @version 1.0
  */
 @Beans
-//@Service
+@Service
 public class ManageGoodListener {
 
-//    @Autowired
-    @Depend
+    @Autowired
     private GoodDAO goodDAO;
 
 
@@ -49,8 +48,8 @@ public class ManageGoodListener {
             Good good = new Good();
             good.setBaiduYunInfo(bdyurl);
             good.setGoodName(name);
-            goodDAO.save(good);
-            context.clear();
+            goodDAO.save(good); // ????
+            context.setGlobal("bdyurl", "$");
             sender.SENDER.sendPrivateMsg(msg.getQQ(), "新增成功，文件名：" + name);
         } else
             sender.SENDER.sendPrivateMsg(msg.getQQ(), "新增失败");
