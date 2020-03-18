@@ -48,8 +48,8 @@ public class ManageGoodListener {
         if (bdyurl != null && bdyurl.startsWith("链接：https://pan.baidu.com/")) {
             Good good = new Good();
             good.setBaiduYunInfo(bdyurl);
-            good.setName(name);
-            goodDAO.save(good); // ????
+            good.setGoodName(name);
+            goodDAO.save(good);
             context.clear();
             sender.SENDER.sendPrivateMsg(msg.getQQ(), "新增成功，文件名：" + name);
         } else

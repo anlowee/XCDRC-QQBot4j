@@ -17,14 +17,14 @@ import javax.persistence.Id;
  * @version 1.0
  */
 @Data
-@Entity
+@Entity(name = "my_good")
 public class Good {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String name;
+    private String goodName;
 
     private String baiduYunInfo;
 
