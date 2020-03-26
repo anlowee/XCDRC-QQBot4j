@@ -2,8 +2,6 @@ package com.iamwxc.bot.githook.pojo;
 
 import lombok.Data;
 
-import java.util.List;
-
 /**
  * Class description goes here.
  * <p>
@@ -14,10 +12,11 @@ import java.util.List;
  * @version 1.0
  */
 @Data
-public class GitPushIssue {
+public class GitRepository {
 
-    private GitRepository repository;
-    private GitSender sender;
-    private List<GitCommit> commits;
+    private Long id;
+    private String name;
+    private String fullName;
+    private String description;
 
 }
