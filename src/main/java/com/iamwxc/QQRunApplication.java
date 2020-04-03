@@ -5,7 +5,6 @@ import com.forte.component.forcoolqhttpapi.CoolQHttpConfiguration;
 import com.forte.qqrobot.depend.DependGetter;
 import com.forte.qqrobot.sender.MsgSender;
 import com.forte.qqrobot.utils.CQCodeUtil;
-import com.iamwxc.bot.seller.GoodDAO;
 
 /**
  * 这个是simple-robot框架的启动器类
