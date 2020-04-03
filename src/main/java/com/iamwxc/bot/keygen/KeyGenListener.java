@@ -25,7 +25,7 @@ public class KeyGenListener {
     public void keyGenListen(PrivateMsg msg, MsgSender sender) {
         long time = System.currentTimeMillis();
         StringBuilder cypher = new StringBuilder();
-        char key = (char) (time%26 + 'a');
+        char key = (char) (time % 17 + 'a');
         cypher.append(key);
         while (time > 0) {
             int cur = (int) (time % 10);
