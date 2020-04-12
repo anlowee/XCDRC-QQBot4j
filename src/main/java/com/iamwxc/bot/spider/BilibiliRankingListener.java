@@ -39,6 +39,7 @@ public class BilibiliRankingListener {
                         .append(rankItem.getElementsByClass("title").get(0).text())
                         .append("\r\n");
             }
+            stringBuffer.delete(stringBuffer.length() - 2, stringBuffer.length());
             sender.SENDER.sendGroupMsg(msg.getGroupCode(), String.valueOf(stringBuffer));
         } catch (IOException e) {
             sender.SENDER.sendGroupMsg(msg.getGroupCode(), "500");
